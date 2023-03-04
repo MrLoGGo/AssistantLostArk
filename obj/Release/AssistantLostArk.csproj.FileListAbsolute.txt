@@ -1,0 +1,13 @@
+D:\program\programming\C#\AssistantLostArk\bin\Release\AssistantLostArk.exe.config
+D:\program\programming\C#\AssistantLostArk\bin\Release\AssistantLostArk.exe
+D:\program\programming\C#\AssistantLostArk\bin\Release\AssistantLostArk.pdb
+D:\program\programming\C#\AssistantLostArk\obj\Release\AssistantLostArk.csproj.AssemblyReference.cache
+D:\program\programming\C#\AssistantLostArk\obj\Release\AssistantLostArk.csproj.SuggestedBindingRedirects.cache
+D:\program\programming\C#\AssistantLostArk\obj\Release\AssistantLostArk.MainForm.resources
+D:\program\programming\C#\AssistantLostArk\obj\Release\AssistantLostArk.MessageForm.resources
+D:\program\programming\C#\AssistantLostArk\obj\Release\AssistantLostArk.Properties.Resources.resources
+D:\program\programming\C#\AssistantLostArk\obj\Release\AssistantLostArk.TestForm.resources
+D:\program\programming\C#\AssistantLostArk\obj\Release\AssistantLostArk.csproj.GenerateResource.cache
+D:\program\programming\C#\AssistantLostArk\obj\Release\AssistantLostArk.csproj.CoreCompileInputs.cache
+D:\program\programming\C#\AssistantLostArk\obj\Release\AssistantLostArk.exe
+D:\program\programming\C#\AssistantLostArk\obj\Release\AssistantLostArk.pdb
