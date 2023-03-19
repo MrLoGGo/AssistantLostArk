@@ -1,31 +1,20 @@
-﻿using AssistantLostArk.Properties;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.ComTypes;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AssistantLostArk
 {
     public partial class MainForm : Form
     {
-        /*ToolStrip toolStrip2 = new ToolStrip();
-        ToolStripButton toolStripButton5 = new ToolStripButton();
-        ToolStripButton toolStripButton6 = new ToolStripButton();
-        MaskedTextBox timeLable = new MaskedTextBox();*/
-        Time timeForStopwatch = new Time();
-        Time timeForTimer = new Time();
+        MyStopwatch myStopwatch = new MyStopwatch();
+        MyTimer myTimer = new MyTimer();
         string page;
-        string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..\\..\\Resources\\EfonUnion.txt");
-        byte countAlarmControlInMainAlarmPanel = 0, XAlarmControlInMainAlarmPanel = (359 - 314) / 2;
+        string path = CreateRef.CreateFile("EfonUnion.txt");
+        byte XAlarmControlInMainAlarmPanel = (359 - 314) / 2;
 
         Page mainMenuPage = new Page();
         Page mainPage = new Page();
@@ -77,7 +66,12 @@ namespace AssistantLostArk
 
         private void buttonOpenGameCenter_Click(object sender, EventArgs e)
         {
-            Process.Start("C:\\Users\\logo1\\AppData\\Local\\GameCenter\\GameCenter.exe");
+            try{
+                Process.Start("C:\\Users\\logo1\\AppData\\Local\\GameCenter\\GameCenter.exe");
+            }catch
+            {
+                MessageBox.Show("У вас нет GameCenter, установите его и попробуйте еще раз.","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void toolStripButtonGo_Click(object sender, EventArgs e)
@@ -107,27 +101,27 @@ namespace AssistantLostArk
 
         public void stopwatch()
         {
-            Time.Stopwatch(stopwatchLable, timeForStopwatch);
-
+            MyStopwatch.Run(stopwatchLable, myStopwatch);
+            
         }
         public void stopwatchStop()
         {
-            Time.StopwatchStop(timeForStopwatch, stopwatchLable);
+            MyStopwatch.Stop(myStopwatch);
         }
 
         async public void timer()
         {
-            Time.Timer(timerLable, timeForTimer);
+            MyTimer.Run(timerLable, myTimer);
             while(true)
             {
                 await Task.Delay(100);
-                if(DataBank.ShowMessage && timeForTimer.GetSMHForEnd() == (byte)0)
+                if(DataBank.ShowMessage && myTimer.GetSMHForEnd() == (byte)0)
                 {
                     ShowMessage("alarm");
                     DataBank.ShowMessage = false;
                     break;
                 }
-                else if(timeForTimer.GetSMHForEnd() == (byte)0)
+                else if(myTimer.GetSMHForEnd() == (byte)0)
                 {
                     break;
                 }
@@ -135,7 +129,7 @@ namespace AssistantLostArk
         }
         public void timerStop()
         {
-            Time.TimerStop(timeForTimer, timerLable);
+            MyTimer.Stop(myTimer, timerLable);
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -155,10 +149,12 @@ namespace AssistantLostArk
                 if (DataBank.MessageFormClose == true)
                 {
                     mainAlarmPanel.Controls.Add(new AlarmControl { TimeText = DataBank.Time });
-                    mainAlarmPanel.Controls[countAlarmControlInMainAlarmPanel].Location = new Point(
+                    mainAlarmPanel.Controls[DataBank.CountTimers].Location = new Point(
                         XAlarmControlInMainAlarmPanel, 
-                        mainAlarmPanel.Controls[countAlarmControlInMainAlarmPanel].Location.Y);
-                    countAlarmControlInMainAlarmPanel++;
+                        mainAlarmPanel.Controls[DataBank.CountTimers].Location.Y);
+                    DataBank.CountTimers++;
+                    AlarmForm alarmForm = new AlarmForm();
+                    alarmForm.Show();
                     DataBank.MessageFormClose = false; 
                     break;
                 }
@@ -190,24 +186,14 @@ namespace AssistantLostArk
         {
 
             ShowPage(efonUnionPage);
-
-            this.BackgroundImage = Properties.Resources.EfonUnionBackgrount;
             textBoxEfonUnion.ScrollBars = ScrollBars.Both;
 
             using (StreamReader stream = new StreamReader(path))
             {
                 textBoxEfonUnion.Text = stream.ReadToEnd();
             }
-            /*using (StreamReader stream = new StreamReader(Resources.EfonUnion))
-            {
-                textBoxEfonUnion.Text = stream.ReadToEnd();
-            }*/
+
             buttonSave.Select();
-            /*this.Hide();
-            EfonUnionForm efonUnionForm = new EfonUnionForm();
-            efonUnionForm.StartPosition= FormStartPosition.Manual;
-            efonUnionForm.Location = this.Location; 
-            efonUnionForm.Show();*/
         }
         private void buttonArgos_Click(object sender, EventArgs e)
         {
@@ -243,7 +229,7 @@ namespace AssistantLostArk
                 if (ac.Checked)
                 {
                     indexesToRemove.Add(mainAlarmPanel.Controls.IndexOf(ac));
-                    countAlarmControlInMainAlarmPanel--;
+                    DataBank.CountTimers--;
                 }
             }
             for(int i = 0; i < indexesToRemove.Count; i++)

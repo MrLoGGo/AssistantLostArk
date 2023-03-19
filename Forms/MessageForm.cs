@@ -1,18 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
 using System.IO;
 using System.IO.Compression;
-using System.Linq;
 using System.Media;
-using System.Reflection;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace AssistantLostArk
 {
@@ -34,13 +25,6 @@ namespace AssistantLostArk
             }
             else if (DataBank.Page == "alarm")
             {
-                //Assembly assembly = Assembly.GetExecutingAssembly();
-                /*using (Stream stream = assembly.GetManifestResourceStream(@"AssistantLostArk.Alarm.Wav"))
-                {
-                    SoundPlayer player = new SoundPlayer();
-                    player.Play();
-                    //AlarmWhile(player);
-                }*/
                 this.Text = "Будильник";
                 using (MemoryStream fileOut = new MemoryStream(Properties.Resources.Alarm))
                 {

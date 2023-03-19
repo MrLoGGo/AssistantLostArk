@@ -145,9 +145,6 @@
   <data name="Shana" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Shana.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="2023-02-20_17-13-47" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2023-02-20_17-13-47.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="EfonUnionBackgrount" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>EfonUnionBackgrount (2).jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>

@@ -12,3 +12,4 @@ D:\program\programming\C#\AssistantLostArk\obj\Debug\AssistantLostArk.csproj.Cor
 D:\program\programming\C#\AssistantLostArk\obj\Debug\AssistantLostArk.exe
 D:\program\programming\C#\AssistantLostArk\obj\Debug\AssistantLostArk.pdb
 D:\program\programming\C#\AssistantLostArk\obj\Debug\AssistantLostArk.AlarmControl.resources
+D:\program\programming\C#\AssistantLostArk\obj\Debug\AssistantLostArk.AlarmForm.resources

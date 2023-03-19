@@ -61,16 +61,6 @@ namespace AssistantLostArk.Properties {
         }
         
         /// <summary>
-        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap _2023_02_20_17_13_47 {
-            get {
-                object obj = ResourceManager.GetObject("2023-02-20_17-13-47", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
         internal static byte[] Alarm {
@@ -143,15 +133,15 @@ namespace AssistantLostArk.Properties {
         /// <summary>
         ///   Ищет локализованную строку, похожую на копье:
         ///
-        ///3стр Сбор маталлолома
-        ///5стр Память льда
+        ///13стр Мастер шкатулки
+        ///11стр Королева пиратов
         ///7стр Новая жизнь
         ///
         ///живопись:
         ///
         ///1стр Помощь сильфам
-        ///10стр Обряд очищения
-        ///10стр Работа на горячих источниках
+        ///3стр Спасение рабов
+        ///3стр Работник лайнера
         ///
         ///музыка:
         ///
@@ -161,7 +151,7 @@ namespace AssistantLostArk.Properties {
         ///
         ///будущее:
         ///
-        ///13стр Мастер шкатулки
+        ///6стр Большая чистка
         ///2 стр Борьба с королем нюхлей.
         /// </summary>
         internal static string EfonUnion {

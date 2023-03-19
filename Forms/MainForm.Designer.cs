@@ -56,9 +56,9 @@
             this.panelTimerAndStopwatch = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelAlarm = new System.Windows.Forms.Panel();
-            this.panelArgos = new System.Windows.Forms.Panel();
-            this.mainAlarmPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.mainAlarmPanel = new System.Windows.Forms.FlowLayoutPanel();
+            this.panelArgos = new System.Windows.Forms.Panel();
             this.toolStrip2.SuspendLayout();
             this.panelMenu.SuspendLayout();
             this.panelButtons.SuspendLayout();
@@ -397,13 +397,16 @@
             this.panelAlarm.Size = new System.Drawing.Size(798, 449);
             this.panelAlarm.TabIndex = 19;
             // 
-            // panelArgos
+            // panel1
             // 
-            this.panelArgos.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panelArgos.Location = new System.Drawing.Point(0, 0);
-            this.panelArgos.Name = "panelArgos";
-            this.panelArgos.Size = new System.Drawing.Size(0, 0);
-            this.panelArgos.TabIndex = 20;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.buttonDel);
+            this.panel1.Controls.Add(this.mainAlarmPanel);
+            this.panel1.Controls.Add(this.buttonAdd);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(385, 449);
+            this.panel1.TabIndex = 8;
             // 
             // mainAlarmPanel
             // 
@@ -415,16 +418,13 @@
             this.mainAlarmPanel.Size = new System.Drawing.Size(320, 332);
             this.mainAlarmPanel.TabIndex = 7;
             // 
-            // panel1
+            // panelArgos
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.buttonDel);
-            this.panel1.Controls.Add(this.mainAlarmPanel);
-            this.panel1.Controls.Add(this.buttonAdd);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(385, 449);
-            this.panel1.TabIndex = 8;
+            this.panelArgos.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.panelArgos.Location = new System.Drawing.Point(0, 0);
+            this.panelArgos.Name = "panelArgos";
+            this.panelArgos.Size = new System.Drawing.Size(0, 0);
+            this.panelArgos.TabIndex = 20;
             // 
             // MainForm
             // 
